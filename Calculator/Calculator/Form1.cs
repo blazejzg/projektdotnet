@@ -12,6 +12,9 @@ namespace Calculator
 {
     public partial class Calculator_window : Form
     {
+        int resultValue = 0;
+        string operationPerformed = "";
+          
         public Calculator_window()
         {
             InitializeComponent();
@@ -19,7 +22,6 @@ namespace Calculator
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
 
         }
 
@@ -31,6 +33,21 @@ namespace Calculator
                     textBox_Result.Clear();
                 }
             textBox_Result.Text = textBox_Result.Text + s;
+        }
+
+        private void operator_click(object sender, EventArgs e)
+        {
+            string s = (sender as Button).Text;
+            operationPerformed = s;
+            resultValue = Convert.ToInt32(textBox_Result);
+        }
+
+        private void button_clear(object sender, EventArgs e)
+        {
+            string s = (sender as Button).Text;
+            resultValue = 0;
+            textBox_Result.Text = resultValue.ToString();
+
         }
     }
 }
