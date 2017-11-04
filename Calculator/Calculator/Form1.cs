@@ -10,11 +10,27 @@ using System.Windows.Forms;
 
 namespace Calculator
 {
-    public partial class Form1 : Form
+    public partial class Calculator_window : Form
     {
-        public Form1()
+        public Calculator_window()
         {
             InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void click_button(object sender, EventArgs e)
+        {
+            string s = (sender as Button).Text;
+            if (textBox_Result.Text == "0")
+                {
+                    textBox_Result.Clear();
+                }
+            textBox_Result.Text = textBox_Result.Text + s;
         }
     }
 }
